@@ -8,7 +8,11 @@
 
 <style>
 
-/* ===== BODY BACKGROUND ===== */
+/* ===== GLOBAL ===== */
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
@@ -45,14 +49,17 @@ body::after {
 
 /* ===== HERO ===== */
 .hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    padding: 80px 20px;
 }
 
 .hero h1 {
     font-family: 'Playfair Display', serif;
     font-size: 42px;
-    margin: 10px 0;
 }
 
 /* mandala */
@@ -78,10 +85,23 @@ body::after {
     margin: 20px auto;
 }
 
-/* ===== SECTION ===== */
+/* ===== SECTIONS ===== */
 .section {
-    text-align: center;
-    padding: 60px 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+
+    opacity: 0;
+    transform: translateY(50px);
+    transition: 1s;
+}
+
+.section.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .section h2 {
@@ -170,13 +190,11 @@ body::after {
     <div class="card">
         <h3>Wedding Ceremony</h3>
         <p>26 Feb - 11:00 AM</p>
-        <p>Function Hall</p>
     </div>
 
     <div class="card">
         <h3>Reception</h3>
         <p>27 Feb - 9:00 PM</p>
-        <p>Hyderabad</p>
     </div>
 </div>
 
@@ -187,9 +205,23 @@ body::after {
 </div>
 
 <script>
+
+/* scroll animation */
+const sections = document.querySelectorAll('.section');
+
+window.addEventListener('scroll', () => {
+    sections.forEach(sec => {
+        const top = sec.getBoundingClientRect().top;
+        if(top < window.innerHeight - 100){
+            sec.classList.add('show');
+        }
+    });
+});
+
 function confirmInvite() {
     alert("Thank you for confirming ❤️");
 }
+
 </script>
 
 </body>
