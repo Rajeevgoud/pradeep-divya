@@ -12,7 +12,7 @@
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
-    background: #d8a1b0; /* dark pink background */
+    background: #d8a1b0;
     text-align: center;
     color: #5a2a3a;
 }
@@ -26,44 +26,46 @@ body {
     align-items: center;
 }
 
-/* ===== CIRCLE WITH IMAGE ===== */
+/* ===== CIRCLE ===== */
 .circle {
     width: 220px;
     height: 220px;
     border-radius: 50%;
     overflow: hidden;
-    margin: 20px 0;
 
-    border: 4px solid #ff4da6;
-    box-shadow: 
-        0 0 25px #ff4da6,
-        0 0 50px rgba(255, 77, 166, 0.6);
+    border: 3px solid #ff2e88;
+    box-shadow: 0 0 30px #ff2e88;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* IMAGE FIT */
+/* ===== IMAGE FIX (IMPORTANT) ===== */
 .circle img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
 }
 
 /* ===== TEXT ===== */
-.title {
-    font-family: 'Playfair Display', serif;
-    font-size: 40px;
-    margin: 10px 0;
-}
-
 .subtitle {
     font-size: 14px;
     letter-spacing: 2px;
 }
 
+.title {
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    margin: 15px 0;
+}
+
 .line {
     width: 60px;
     height: 2px;
-    background: #ff4da6;
-    margin: 15px auto;
+    background: #ff2e88;
+    margin: 10px auto;
 }
 
 .scroll {
@@ -80,9 +82,9 @@ body {
 
     <div class="subtitle">THE WEDDING CELEBRATION</div>
 
-    <!-- 🔥 CIRCLE IMAGE AREA -->
+    <!-- 🔥 IMAGE INSIDE CIRCLE -->
     <div class="circle">
-        <!-- ✅ ADD YOUR IMAGE HERE -->
+        <!-- ✅ MAKE SURE THIS NAME MATCHES YOUR FILE -->
         <img src="photo.jpg" alt="Couple Photo">
     </div>
 
