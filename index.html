@@ -85,35 +85,42 @@ body {
 /* ===== MOBILE RESPONSIVE ===== */
 @media (max-width: 600px) {
 
+    body {
+        overflow-x: hidden;
+    }
+
     .hero {
-        padding: 10px;
+        height: 100vh;
+        padding: 0;
+        justify-content: center;
     }
 
     .circle {
-        width: 85vw;   /* 🔥 BIG IMAGE */
-        height: 85vw;
-        max-width: 380px;
-        max-height: 380px;
-        margin: 15px auto;
-    }
+        width: 95vw;     /* 🔥 almost full width */
+        height: 95vw;
+        margin: 0 auto;
 
-    .title {
-        font-size: 30px;
-        margin-top: 10px;
+        border-width: 6px;  /* thicker border */
     }
 
     .subtitle {
-        font-size: 14px;
-        margin-top: 20px;
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .title {
+        font-size: 32px;
+        margin-top: 10px;
     }
 
     .line {
-        width: 100px;
+        width: 120px;
         height: 3px;
     }
 
     .scroll {
         font-size: 14px;
+        margin-top: 10px;
     }
 }
 
