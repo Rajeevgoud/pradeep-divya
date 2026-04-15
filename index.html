@@ -19,7 +19,8 @@ body {
 
 /* ===== MAIN SECTION ===== */
 .hero {
-    height: 100vh;
+    min-height: 100vh;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -37,11 +38,12 @@ body {
     border: 4px solid #ff2e88;
     box-shadow: 0 0 30px #ff2e88;
 
-    position: relative;   /* 🔥 IMPORTANT */
+    position: relative;
 }
 
+/* ===== IMAGE ===== */
 .circle img {
-    position: absolute;   /* 🔥 IMPORTANT */
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -73,6 +75,33 @@ body {
     margin-top: 10px;
 }
 
+/* ===== MOBILE RESPONSIVE ===== */
+@media (max-width: 600px) {
+
+    .circle {
+        width: 280px;
+        height: 280px;
+    }
+
+    .title {
+        font-size: 32px;
+    }
+
+    .subtitle {
+        font-size: 16px;
+        letter-spacing: 3px;
+    }
+
+    .line {
+        width: 80px;
+        height: 3px;
+    }
+
+    .scroll {
+        font-size: 16px;
+    }
+}
+
 </style>
 </head>
 
@@ -84,8 +113,8 @@ body {
 
     <!-- 🔥 IMAGE INSIDE CIRCLE -->
     <div class="circle">
-        <!-- ✅ MAKE SURE THIS NAME MATCHES YOUR FILE -->
-        <img src="./photo.jpg" alt="Couple Photo">
+        <!-- ✅ MAKE SURE FILE NAME MATCHES -->
+        <img src="photo.jpg" alt="Couple Photo">
     </div>
 
     <div class="title">Pradeep & Divya</div>
