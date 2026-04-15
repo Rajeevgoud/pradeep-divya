@@ -9,142 +9,66 @@
 <style>
 
 /* ===== GLOBAL ===== */
-html {
-    scroll-behavior: smooth;
-    scroll-snap-type: y mandatory;
-}
-
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
-    color: #5a2a5a;
-
-    /* BACKGROUND IMAGE */
-    background: url('bg.jpg') no-repeat center center fixed;
-    background-size: cover;
-
-    overflow-x: hidden;
+    background: #d8a1b0; /* dark pink background */
+    text-align: center;
+    color: #5a2a3a;
 }
 
-/* DARK PINK OVERLAY */
-body::before {
-    content: "";
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background: rgba(214, 51, 108, 0.35); /* dark pink overlay */
-    z-index: -1;
-}
-
-/* ===== HERO ===== */
+/* ===== MAIN SECTION ===== */
 .hero {
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
-
-    scroll-snap-align: start;
 }
 
-.hero h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 42px;
-    color: #8b1e5a;
-}
-
-/* mandala */
-.mandala {
-    width: 200px;
-    height: 200px;
-    margin: 20px auto;
+/* ===== CIRCLE WITH IMAGE ===== */
+.circle {
+    width: 220px;
+    height: 220px;
     border-radius: 50%;
-    border: 2px solid #d6336c;
-    box-shadow: 0 0 30px #ff69b4, 0 0 60px rgba(255,105,180,0.5);
-    animation: rotate 12s linear infinite;
+    overflow: hidden;
+    margin: 20px 0;
+
+    border: 4px solid #ff4da6;
+    box-shadow: 
+        0 0 25px #ff4da6,
+        0 0 50px rgba(255, 77, 166, 0.6);
 }
 
-@keyframes rotate {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+/* IMAGE FIT */
+.circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ===== TEXT ===== */
+.title {
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    margin: 10px 0;
+}
+
+.subtitle {
+    font-size: 14px;
+    letter-spacing: 2px;
 }
 
 .line {
-    width: 120px;
+    width: 60px;
     height: 2px;
-    background: #d6336c;
-    margin: 20px auto;
+    background: #ff4da6;
+    margin: 15px auto;
 }
 
-/* ===== SECTIONS ===== */
-.section {
-    padding: 80px 20px;
-    margin-bottom: 80px;
-    text-align: center;
-
-    scroll-snap-align: start;
-
-    opacity: 0;
-    transform: translateY(50px);
-    transition: 1s;
-}
-
-.section.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.section h2 {
-    font-family: 'Playfair Display', serif;
-    margin-bottom: 30px;
-    color: #8b1e5a;
-}
-
-/* ===== CARDS ===== */
-.card {
-    background: rgba(255,255,255,0.7);
-    backdrop-filter: blur(10px);
-    border-radius: 15px;
-    padding: 20px;
-    margin: 20px auto;
-    max-width: 350px;
-    box-shadow: 0 0 15px rgba(214, 51, 108, 0.3);
-}
-
-/* ===== IMAGES ===== */
-.img-box {
-    border: 3px solid #d6336c;
-    border-radius: 15px;
-    overflow: hidden;
-}
-
-.img-box img {
-    width: 100%;
-}
-
-/* ===== BUTTON ===== */
-.btn {
-    padding: 12px 25px;
-    background: #d6336c;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    color: white;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.btn:hover {
-    transform: scale(1.1);
-    background: #a61e4d;
-}
-
-/* ===== MOBILE ===== */
-@media(max-width:768px){
-    .hero h1 {
-        font-size: 30px;
-    }
+.scroll {
+    font-size: 14px;
+    margin-top: 10px;
 }
 
 </style>
@@ -152,84 +76,23 @@ body::before {
 
 <body>
 
-<!-- HERO -->
 <div class="hero">
-    <p>THE WEDDING CELEBRATION</p>
 
-    <div class="mandala"></div>
+    <div class="subtitle">THE WEDDING CELEBRATION</div>
 
-    <h1>Pradeep & Divya</h1>
+    <!-- 🔥 CIRCLE IMAGE AREA -->
+    <div class="circle">
+        <!-- ✅ ADD YOUR IMAGE HERE -->
+        <img src="photo.jpg" alt="Couple Photo">
+    </div>
+
+    <div class="title">Pradeep & Divya</div>
 
     <div class="line"></div>
 
-    <p>Scroll to explore ↓</p>
+    <div class="scroll">Scroll to explore ↓</div>
+
 </div>
-
-<!-- COUPLE -->
-<div class="section">
-    <h2>The Couple</h2>
-
-    <div class="card">
-        <div class="img-box">
-            <img src="groom.jpg">
-        </div>
-        <h3>Rajendra</h3>
-    </div>
-
-    <div class="card">
-        <div class="img-box">
-            <img src="bride.jpg">
-        </div>
-        <h3>Sushma</h3>
-    </div>
-</div>
-
-<!-- EVENTS -->
-<div class="section">
-    <h2>Celebration Schedule</h2>
-
-    <div class="card">
-        <h3>Haldi Ceremony</h3>
-        <p>25 Feb - 10:00 AM</p>
-        <p>Hyderabad</p>
-    </div>
-
-    <div class="card">
-        <h3>Wedding Ceremony</h3>
-        <p>26 Feb - 11:00 AM</p>
-    </div>
-
-    <div class="card">
-        <h3>Reception</h3>
-        <p>27 Feb - 9:00 PM</p>
-    </div>
-</div>
-
-<!-- RSVP -->
-<div class="section">
-    <h2>Confirm Your Presence</h2>
-    <button class="btn" onclick="confirmInvite()">Confirm ❤️</button>
-</div>
-
-<script>
-
-/* scroll animation */
-const sections = document.querySelectorAll('.section');
-
-window.addEventListener('scroll', () => {
-    sections.forEach(sec => {
-        const top = sec.getBoundingClientRect().top;
-        if(top < window.innerHeight - 100){
-            sec.classList.add('show');
-        }
-    });
-});
-
-function confirmInvite() {
-    alert("Thank you for confirming ❤️");
-}
-
-</script>
 
 </body>
 </html>
