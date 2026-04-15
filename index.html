@@ -11,6 +11,7 @@
 /* ===== GLOBAL ===== */
 html {
     scroll-behavior: smooth;
+    scroll-snap-type: y mandatory; /* smooth section scroll */
 }
 
 body {
@@ -55,6 +56,8 @@ body::after {
     justify-content: center;
     align-items: center;
     text-align: center;
+
+    scroll-snap-align: start;
 }
 
 .hero h1 {
@@ -85,14 +88,13 @@ body::after {
     margin: 20px auto;
 }
 
-/* ===== SECTIONS ===== */
+/* ===== SECTIONS (FIXED) ===== */
 .section {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 40px 20px;
+    padding: 80px 20px;
+    margin-bottom: 80px;
+    text-align: center;
+
+    scroll-snap-align: start;
 
     opacity: 0;
     transform: translateY(50px);
@@ -106,6 +108,7 @@ body::after {
 
 .section h2 {
     font-family: 'Playfair Display', serif;
+    margin-bottom: 30px;
 }
 
 /* ===== CARDS ===== */
@@ -131,13 +134,25 @@ body::after {
 
 /* ===== BUTTON ===== */
 .btn {
-    padding: 10px 20px;
+    padding: 12px 25px;
     background: gold;
     border: none;
-    border-radius: 20px;
+    border-radius: 25px;
     cursor: pointer;
     color: black;
     font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+}
+
+/* ===== MOBILE ===== */
+@media(max-width:768px){
+    .hero h1 {
+        font-size: 30px;
+    }
 }
 
 </style>
