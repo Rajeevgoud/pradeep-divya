@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta charset="UTF-8">
+
+<!-- ✅ IMPORTANT FOR MOBILE -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-    <meta charset="UTF-8">
+
 <title>Wedding Invitation</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins&display=swap" rel="stylesheet">
@@ -22,7 +24,13 @@ body {
 /* ===== MAIN SECTION ===== */
 .hero {
     min-height: 100vh;
-    padding: 40px 20px;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: flex-start;   /* 🔥 FIX */
+    align-items: center;
 }
 
 /* ===== CIRCLE ===== */
@@ -53,6 +61,7 @@ body {
 .subtitle {
     font-size: 14px;
     letter-spacing: 2px;
+    margin-top: 30px;
 }
 
 .title {
@@ -74,44 +83,39 @@ body {
 }
 
 /* ===== MOBILE RESPONSIVE ===== */
-    @media (max-width: 600px) {
+@media (max-width: 600px) {
 
     .hero {
-        height: 100vh;
         padding: 10px;
-        justify-content: center;
     }
 
     .circle {
-        width: 90vw;        /* 🔥 almost full screen */
-        height: 90vw;
-        max-width: 400px;
-        max-height: 400px;
-        margin: 10px auto;
+        width: 85vw;   /* 🔥 BIG IMAGE */
+        height: 85vw;
+        max-width: 380px;
+        max-height: 380px;
+        margin: 15px auto;
     }
 
     .title {
-        font-size: 34px;
+        font-size: 30px;
         margin-top: 10px;
     }
 
     .subtitle {
-        font-size: 16px;
-        margin-bottom: 10px;
+        font-size: 14px;
+        margin-top: 20px;
     }
 
     .line {
         width: 100px;
         height: 3px;
-        margin: 10px auto;
     }
 
     .scroll {
         font-size: 14px;
-        margin-top: 10px;
     }
 }
-
 
 </style>
 </head>
@@ -122,9 +126,8 @@ body {
 
     <div class="subtitle">THE WEDDING CELEBRATION</div>
 
-    <!-- 🔥 IMAGE INSIDE CIRCLE -->
+    <!-- 🔥 IMAGE -->
     <div class="circle">
-        <!-- ✅ MAKE SURE FILE NAME MATCHES -->
         <img src="photo.jpg" alt="Couple Photo">
     </div>
 
