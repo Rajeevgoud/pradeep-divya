@@ -40,12 +40,6 @@ body {
     width: 120px;
 }
 
-.invite-box h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 28px;
-    color: #7a1c2f;
-}
-
 .seal {
     width: 130px;
     height: 130px;
@@ -59,7 +53,7 @@ body {
     cursor: pointer;
 }
 
-/* ===== MAIN CONTENT ===== */
+/* ===== MAIN ===== */
 #mainContent {
     display: none;
     height: 100vh;
@@ -67,76 +61,18 @@ body {
     scroll-snap-type: y mandatory;
 }
 
-/* ===== HERO PAGE ===== */
-.hero {
-    height: 100vh;
-    background: #d8a1b0;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    text-align: center;
-    scroll-snap-align: start;
-}
-
-.subtitle {
-    font-size: 14px;
-    letter-spacing: 2px;
-    margin-bottom: 20px;
-}
-
-/* BIG CIRCLE */
-.circle {
-    width: 260px;
-    height: 260px;
-    border-radius: 50%;
-    border: 4px solid #ff2e88;
-    box-shadow: 0 0 40px #ff2e88;
-    margin: 20px 0;
-}
-
-/* TITLE */
-.title {
-    font-family: 'Playfair Display', serif;
-    font-size: 40px;
-    margin-top: 10px;
-}
-
-.line {
-    width: 80px;
-    height: 3px;
-    background: #ff2e88;
-    margin: 15px auto;
-}
-
-.scroll {
-    font-size: 14px;
-}
-
-/* ===== IMAGE PAGES ===== */
+/* EACH PAGE */
 .section {
     height: 100vh;
+    width: 100%;
     scroll-snap-align: start;
 }
 
+/* IMAGE FULL SCREEN */
 .section img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-}
-
-/* MOBILE */
-@media (max-width:600px){
-    .circle {
-        width: 70vw;
-        height: 70vw;
-    }
-
-    .title {
-        font-size: 28px;
-    }
 }
 
 </style>
@@ -145,42 +81,26 @@ body {
 
 <body>
 
-<!-- 🔥 INTRO -->
+<!-- INTRO -->
 
 <div id="intro">
     <div class="invite-box">
         <img src="ganesj.jpg" class="ganesha">
-        <h2>Wedding Invitation</h2>
         <div class="seal" onclick="openInvite()">Tap to Open</div>
     </div>
 </div>
 
-<!-- 🔥 MAIN -->
+<!-- MAIN CONTENT -->
 
 <div id="mainContent">
 
 ```
-<!-- ✅ HERO PAGE -->
-<div class="hero">
-
-    <div class="subtitle">THE WEDDING CELEBRATION</div>
-
-    <div class="circle"></div>
-
-    <div class="title">Pradeep & Divya</div>
-
-    <div class="line"></div>
-
-    <div class="scroll">Scroll to explore ↓</div>
-
-</div>
-
-<!-- ✅ PAGE 2 -->
+<!-- ✅ PAGE 1 (FIRST IMAGE AFTER CLICK) -->
 <div class="section">
     <img src="page1.jpg">
 </div>
 
-<!-- ✅ PAGE 3 -->
+<!-- ✅ PAGE 2 -->
 <div class="section">
     <img src="page2.jpg">
 </div>
