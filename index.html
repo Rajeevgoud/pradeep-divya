@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Pradeep & Divya Wedding Invitation</title>
-
-<!-- ✅ WhatsApp Preview -->
+<!-- ✅ WhatsApp Preview FIX -->
 <meta property="og:title" content="Pradeep & Divya Wedding Invitation">
 <meta property="og:description" content="Pradeep & Divya Wedding Invitation">
 <meta property="og:image" content="https://rajeevgoud.github.io/wedding-invitation/page1.jpg">
 <meta property="og:url" content="https://rajeevgoud.github.io/wedding-invitation/">
+
+<title>Wedding Invitation</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins&display=swap" rel="stylesheet">
 
@@ -21,11 +21,10 @@ body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
     text-align: center;
-    scroll-behavior: smooth;
-    overflow-x: hidden;
+    background: #d8a1b0;
 }
 
-/* ===== INTRO SCREEN ===== */
+/* ===== INTRO ===== */
 #intro {
     position: fixed;
     width: 100%;
@@ -53,7 +52,7 @@ body {
     color: #7a1c2f;
 }
 
-/* 🔴 TAP BUTTON */
+/* BUTTON */
 .seal {
     width: 130px;
     height: 130px;
@@ -65,31 +64,34 @@ body {
     color: white;
     font-family: 'Playfair Display', serif;
     cursor: pointer;
-    box-shadow: inset 0 0 15px rgba(0,0,0,0.5), 0 10px 25px rgba(0,0,0,0.4);
 }
 
 /* ===== MAIN ===== */
 #mainContent {
     display: none;
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
 }
 
-/* FULL PAGE SECTIONS */
+/* SECTIONS */
 .section {
     height: 100vh;
+    scroll-snap-align: start;
+}
+
+/* HERO */
+.hero {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-/* HERO SECTION */
-.hero {
-    background: #d8a1b0;
-    flex-direction: column;
-}
-
+/* PERFECT CENTER CIRCLE */
 .circle {
-    width: 250px;
-    height: 250px;
+    width: 260px;
+    height: 260px;
     border-radius: 50%;
     overflow: hidden;
     border: 4px solid #ff2e88;
@@ -102,22 +104,33 @@ body {
     object-fit: cover;
 }
 
+/* TEXT */
+.subtitle {
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
 .title {
     font-family: 'Playfair Display', serif;
     font-size: 40px;
-    margin-top: 20px;
 }
 
-.scroll-text {
-    margin-top: 10px;
+.line {
+    width: 60px;
+    height: 2px;
+    background: #ff2e88;
+    margin: 10px auto;
+}
+
+.scroll {
     font-size: 14px;
 }
 
-/* IMAGE PAGES */
-.page-img {
+/* FULL IMAGE PAGES */
+.section img {
     width: 100%;
-    height: 100vh;
-    object-fit: cover;
+    height: 100%;
+    object-fit: contain;
 }
 
 /* MOBILE */
@@ -133,61 +146,58 @@ body {
 
 <body>
 
-<!-- 🔥 INTRO -->
+<!-- INTRO -->
 <div id="intro">
     <div class="invite-box">
         <img src="ganesj.jpg" class="ganesha">
         <h2>Wedding Invitation</h2>
-
-        <div class="seal" onclick="openInvite()">
-            Tap to<br>Open
-        </div>
+        <div class="seal" onclick="openInvite()">Tap to Open</div>
     </div>
 </div>
 
-<!-- 🔥 MAIN -->
+<!-- MAIN -->
 <div id="mainContent">
-
-    <!-- 🎵 MUSIC -->
-    <audio id="music" src="song.mp3" loop></audio>
 
     <!-- PAGE 1 -->
     <div class="section hero">
-        <div>THE WEDDING CELEBRATION</div>
+        <div class="subtitle">THE WEDDING CELEBRATION</div>
 
         <div class="circle">
             <img src="photo.jpg">
         </div>
 
         <div class="title">Pradeep & Divya</div>
-
-        <div class="scroll-text">Scroll to explore ↓</div>
+        <div class="line"></div>
+        <div class="scroll">Scroll down ↓</div>
     </div>
 
     <!-- PAGE 2 -->
     <div class="section">
-        <img src="page1.jpg" class="page-img">
+        <img src="page1.jpg">
     </div>
 
     <!-- PAGE 3 -->
     <div class="section">
-        <img src="page2.jpg" class="page-img">
+        <img src="page2.jpg">
     </div>
 
     <!-- PAGE 4 -->
     <div class="section">
-        <img src="page3.jpg" class="page-img">
+        <img src="page3.jpg">
     </div>
 
 </div>
+
+<!-- MUSIC -->
+<audio id="music" loop>
+    <source src="song.mp3" type="audio/mpeg">
+</audio>
 
 <!-- SCRIPT -->
 <script>
 function openInvite() {
     document.getElementById("intro").style.display = "none";
     document.getElementById("mainContent").style.display = "block";
-
-    // autoplay music
     document.getElementById("music").play();
 }
 </script>
